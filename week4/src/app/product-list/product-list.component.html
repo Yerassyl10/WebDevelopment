@@ -1,0 +1,51 @@
+<h2 class="h2-style">Products</h2>
+<div id="main">
+<div class="week-product">
+ <h2>Product of the week</h2>
+  <div *ngFor="let product of products" class="best-products">
+    <div *ngIf="product.rating>4.8" class="img-container"> 
+      <img class="best-item" src="{{product.images[0]}}" width="300" height="240" alt="suret">
+    </div>
+  </div>
+</div>
+
+
+<div *ngFor="let product of products" class="products">
+
+  <h3>
+    <a [title]="product.name + ' details'" href="{{product.originalLink}}" target="_blank">
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <angular-image-slider
+    [autoRotate]="true"
+    [autoRotateAfter]="5000"
+    [autoRotateRight]="true"
+    [images]=product.images>
+  </angular-image-slider>
+
+  <p *ngIf="product.description">
+    Description: {{ product.description }} <br>
+    Rating: {{ product.rating }}
+  </p>
+
+  
+ 
+
+  <button (click)="share()">
+    <a href="{{ product.plink }}" class="button" target="_blank">Share</a>
+  </button>
+  
+<app-product-alerts
+  [product]="product"
+  (notify)="onNotify()">
+</app-product-alerts>
+
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
