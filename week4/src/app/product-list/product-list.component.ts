@@ -10,9 +10,7 @@ import { products } from '../products';
 export class ProductListComponent implements OnInit {
   public imagesUrl;
   products = products;
-
-
-
+  
   share() {
     window.alert('The product has been shared!');
   }
