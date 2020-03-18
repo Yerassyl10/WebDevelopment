@@ -1,0 +1,5 @@
+a=int(input())
+b=int(input())
+if a>=1000 and a<=9999 and int(str(a)[:2])==int(str(a)[:2]) and b==1: print("YES")
+elif  b!=1: print("YES")
+else: print("NO")
