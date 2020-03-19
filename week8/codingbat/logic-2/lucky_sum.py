@@ -1,5 +1,5 @@
-def lucky_sum(a, b, c):
-  sum = a + b + c
+def lucky_sum(a,b,c):
+  sum=a+b+c
   if a == 13 :
     return 0
     
